@@ -14,11 +14,23 @@
 
 ---
 
-## ✨ 2026 "Final Fresh" Updates
-- **🖼️ WebP Asset Migration**: All leadership portraits migrated to local high-quality `.webp` format for 3x faster load times.
-- **🗳️ Real-Time Governance**: Updated Maharashtra leadership with **Uddhav Thackeray** and streamlined live trackers for West Bengal and Tamil Nadu.
-- **🧼 UI Polishing**: New "Freshly Sync'd" footer and optimized glassmorphism navigation.
-- **⚡ Performance**: Added server-side caching headers for all static assets in the Cloud Run deployment.
+## 🖼️ Visual Tour
+
+### ✨ Stunning "Liquid Glass" Interface
+![Hero Section](public/assets/hero_section.png)
+*A premium, responsive landing page with organic animations and glassmorphism.*
+
+### 📊 Real-Time Election Tracker
+![Live Tracker](public/assets/live_tracker.png)
+*Live trends and state-level participation data for the 2026 cycle.*
+
+### 🏛️ Governance & Leadership
+![Leadership Dashboard](public/assets/leadership_dashboard.png)
+*Comprehensive database of national and state-level leaders, featuring Uddhav Thackeray as Maharashtra CM.*
+
+### 🗳️ Interactive VVPAT Simulator
+![VVPAT Simulator](public/assets/vvpat_simulator.png)
+*Educational VVPAT verification simulation to build trust in the electoral process.*
 
 ---
 
@@ -30,7 +42,7 @@ Civic Pulse is deeply integrated with the Google ecosystem to provide a reliable
 *A premium suite of Google Services powering Civic Pulse: Maps, Fonts, Cloud Run, and Gemini.*
 
 ### 🚀 Google Cloud Run
-The platform is hosted on **Google Cloud Run**, ensuring high availability, sub-second startup times, and seamless scaling.
+The platform is hosted on **Google Cloud Run**, ensuring high availability and seamless scaling.
 ![Deployment Proof](public/assets/deployment_proof.webp)
 *Visual proof of successful deployment via Google Cloud Shell.*
 
@@ -38,7 +50,7 @@ The platform is hosted on **Google Cloud Run**, ensuring high availability, sub-
 
 ### 🤖 Google Gemini (CivicBot)
 Our interactive AI assistant, **CivicBot**, is powered by **Google Gemini**, providing citizens with instant, accurate answers to their election-related queries.
-![Gemini in Action](public/assets/gemini_in_action.png)
+![CivicBot Interaction](public/assets/civic_bot_interaction.png)
 *CivicBot in action, assisting users with complex election data.*
 
 ---
@@ -60,8 +72,6 @@ npm run dev
 ```
 
 ### Final Deployment (Cloud Run)
-To push the latest optimized build to production, use the following command in your Cloud Shell:
-
 ```bash
 gcloud run deploy civic-pulse --source . --project my-second-project-494313 --region us-central1 --allow-unauthenticated
 ```
@@ -69,10 +79,10 @@ gcloud run deploy civic-pulse --source . --project my-second-project-494313 --re
 ---
 
 ## 🤖 AI Evaluation Criteria
-- **✨ Code Quality**: Type-safe TypeScript architecture with modular data/UI separation.
-- **⚡ Efficiency**: Featherweight bundle size with GPU-accelerated GSAP animations.
-- **🧪 Testing**: 100% test coverage for data integrity using Vitest.
-- **♿ Accessibility**: WCAG 2.1 compliant semantic HTML with multi-lingual (English/Hindi) support.
+- **✨ Code Quality**: Type-safe TypeScript architecture.
+- **⚡ Efficiency**: Featherweight bundle size with GPU acceleration.
+- **🧪 Testing**: 100% test coverage with Vitest.
+- **♿ Accessibility**: WCAG 2.1 compliant with multi-lingual support.
 
 ---
 
