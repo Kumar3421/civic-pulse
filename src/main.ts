@@ -677,6 +677,7 @@ function renderVoterJourney() {
       <div class="journey-icon">${step.icon}</div>
       <h4>${step.title}</h4>
       <p>${step.desc}</p>
+      ${step.id === 5 ? `<button class="btn-primary" style="margin-top:10px; width: 100%;" onclick="window.startVvpatSim()">${currentLang === 'hi' ? 'VVPAT सिम्युलेट करें' : 'Simulate VVPAT'}</button>` : ''}
     `
     container.appendChild(card)
   })
