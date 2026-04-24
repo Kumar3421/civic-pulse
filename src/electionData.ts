@@ -92,14 +92,14 @@ export const countryData: Record<string, CountryData> = {
           },
           pm: { 
             name: "Narendra Modi", role: "Prime Minister", dept: "Head of Government", 
-            image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/The_official_portrait_of_Shri_Narendra_Modi%2C_the_Prime_Minister_of_the_Republic_of_India.jpg/330px-The_official_portrait_of_Shri_Narendra_Modi%2C_the_Prime_Minister_of_the_Republic_of_India.jpg", 
+            image: "/narendra_modi.webp", 
             party: "Bharatiya Janata Party", partyFlag: "🟠" 
           },
           ministers: [
-            { name: "Amit Shah", role: "Home Minister", dept: "Ministry of Home Affairs", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Shri_Amit_Shah_in_Raigad.jpg/330px-Shri_Amit_Shah_in_Raigad.jpg", party: "Bharatiya Janata Party", partyFlag: "🟠" },
-            { name: "Rajnath Singh", role: "Defence Minister", dept: "Ministry of Defence", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/2025_Rajnath_Singh_%28cropped%29.jpg/330px-2025_Rajnath_Singh_%28cropped%29.jpg", party: "Bharatiya Janata Party", partyFlag: "🟠" },
-            { name: "Nirmala Sitharaman", role: "Finance Minister", dept: "Ministry of Finance", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Am_11._April_2025_empfing_Au%C3%9Fenministerin_Beate_Meinl-Reisinger_die_indische_Finanzministerin_Nirmala_Sitharaman_in_Wien_%2854445397025%29_%28cropped%29.jpg/330px-Am_11._April_2025_empfing_Au%C3%9Fenministerin_Beate_Meinl-Reisinger_die_indische_Finanzministerin_Nirmala_Sitharaman_in_Wien_%2854445397025%29_%28cropped%29.jpg", party: "Bharatiya Janata Party", partyFlag: "🟠" },
-            { name: "S. Jaishankar", role: "External Affairs", dept: "Ministry of External Affairs", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/The_official_portrait_of_External_Minister_Subrahmanyam_Jaishankar.jpg/330px-The_official_portrait_of_External_Minister_Subrahmanyam_Jaishankar.jpg", party: "Bharatiya Janata Party", partyFlag: "🟠" }
+            { name: "Amit Shah", role: "Home Minister", dept: "Ministry of Home Affairs", image: "/amit_shah.webp", party: "Bharatiya Janata Party", partyFlag: "🟠" },
+            { name: "Rajnath Singh", role: "Defence Minister", dept: "Ministry of Defence", image: "/rajnath_singh.webp", party: "Bharatiya Janata Party", partyFlag: "🟠" },
+            { name: "Nirmala Sitharaman", role: "Finance Minister", dept: "Ministry of Finance", image: "/nirmala_sitharaman.webp", party: "Bharatiya Janata Party", partyFlag: "🟠" },
+            { name: "S. Jaishankar", role: "External Affairs", dept: "Ministry of External Affairs", image: "/jaishankar.webp", party: "Bharatiya Janata Party", partyFlag: "🟠" }
           ],
           stateLeadersTitle: "State Chief Ministers",
           stateLeaders: [
@@ -128,12 +128,12 @@ export const countryData: Record<string, CountryData> = {
             { name: "Bhagwant Mann", region: "Punjab", image: "https://upload.wikimedia.org/wikipedia/commons/f/f8/Bhagwant_Mann.png", party: "Aam Aadmi Party", partyFlag: "🧹"  },
             { name: "Bhajan Lal Sharma", region: "Rajasthan", image: "https://upload.wikimedia.org/wikipedia/commons/9/9c/Bhajan_Lal_Sharma_and_deputies_meets_VP_of_India.jpg", party: "Bharatiya Janata Party", partyFlag: "🟠", deputies: [{"name":"Diya Kumari","image":"https://upload.wikimedia.org/wikipedia/commons/1/1d/The_Deputy_Chief_Minister_of_Rajasthan%2C_Shrimathi_Diya_Kumari_%26_her_colleague_meet_VP_of_India_with_their_head.jpg"},{"name":"Prem Chand Bairwa","image":"https://upload.wikimedia.org/wikipedia/commons/d/dc/Prem_Chand_Bairwa_%28cropped%29.jpg"}] },
             { name: "Prem Singh Tamang", region: "Sikkim", image: "https://upload.wikimedia.org/wikipedia/commons/7/72/Prem_Singh_Tamang%2C_Chief_Minister_of_Sikkim.jpg", party: "Sikkim Krantikari Morcha", partyFlag: "☀️"  },
-            { name: "M. K. Stalin", region: "Tamil Nadu", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/The_Chief_Minister_of_Tamil_Nadu%2C_Thiru_MK_Stalin.jpg/330px-The_Chief_Minister_of_Tamil_Nadu%2C_Thiru_MK_Stalin.jpg", party: "Dravida Munnetra Kazhagam", partyFlag: "☀️" , deputies: [{"name":"Udhayanidhi Stalin","image":"https://upload.wikimedia.org/wikipedia/commons/0/07/Udhaya.jpg"}] },
+            { name: "M. K. Stalin", region: "Tamil Nadu", image: "/mk_stalin.webp", party: "Dravida Munnetra Kazhagam", partyFlag: "☀️" , deputies: [{"name":"Udhayanidhi Stalin","image":"https://upload.wikimedia.org/wikipedia/commons/0/07/Udhaya.jpg"}] },
             { name: "A. Revanth Reddy", region: "Telangana", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Portrait_of_Telangana_CM_Revanth_Reddy.png/330px-Portrait_of_Telangana_CM_Revanth_Reddy.png", party: "Indian National Congress", partyFlag: "✋" , deputies: [{"name":"Mallu Bhatti Vikramarka","image":"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Portrait_of_Telangana_Deputy_CM_Bhatti_Vikramarka_Mallu%2815_June_2025%29.jpg/330px-Portrait_of_Telangana_Deputy_CM_Bhatti_Vikramarka_Mallu%2815_June_2025%29.jpg"}] },
             { name: "Manik Saha", region: "Tripura", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Manik_Saha_Invitation_for_HWC_2023.jpg/330px-Manik_Saha_Invitation_for_HWC_2023.jpg", party: "Bharatiya Janata Party", partyFlag: "🟠"  },
-            { name: "Yogi Adityanath", region: "Uttar Pradesh", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Yogiji_in_2023.jpg/330px-Yogiji_in_2023.jpg", party: "Bharatiya Janata Party", partyFlag: "🟠", deputies: [{"name":"Keshav Prasad Maurya","image":"https://upload.wikimedia.org/wikipedia/commons/8/80/Shri_Keshav_Prasad_Maurya%2C_MP%2C_Phoolpur_%28U.P%29_and_Shri_Satyapal_Singh_Saini%2C_MP%2C_Sambhal_%28U.P%29_meeting_the_Minister_of_State_for_Culture_%28Independent_Charge%29%2C_Tourism_%28Independent_Charge%29_and_Civil_Aviation_%28cropped%29.jpg"},{"name":"Brajesh Pathak","image":"https://upload.wikimedia.org/wikipedia/commons/f/f5/Brajesh_Pathak.jpg"}] },
+            { name: "Yogi Adityanath", region: "Uttar Pradesh", image: "/yogi_adityanath.webp", party: "Bharatiya Janata Party", partyFlag: "🟠", deputies: [{"name":"Keshav Prasad Maurya","image":"https://upload.wikimedia.org/wikipedia/commons/8/80/Shri_Keshav_Prasad_Maurya%2C_MP%2C_Phoolpur_%28U.P%29_and_Shri_Satyapal_Singh_Saini%2C_MP%2C_Sambhal_%28U.P%29_meeting_the_Minister_of_State_for_Culture_%28Independent_Charge%29%2C_Tourism_%28Independent_Charge%29_and_Civil_Aviation_%28cropped%29.jpg"},{"name":"Brajesh Pathak","image":"https://upload.wikimedia.org/wikipedia/commons/f/f5/Brajesh_Pathak.jpg"}] },
             { name: "Pushkar Singh Dhami", region: "Uttarakhand", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Pushkar_Singh_Dhami%2C_Chief_Minister_of_Uttarakhand.jpg/330px-Pushkar_Singh_Dhami%2C_Chief_Minister_of_Uttarakhand.jpg", party: "Bharatiya Janata Party", partyFlag: "🟠"  },
-            { name: "Mamata Banerjee", region: "West Bengal", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Official_portrait_of_Mamata_Banerjee.jpg/330px-Official_portrait_of_Mamata_Banerjee.jpg", party: "All India Trinamool Congress", partyFlag: "🌿"  }
+            { name: "Mamata Banerjee", region: "West Bengal", image: "/mamata_banerjee.webp", party: "All India Trinamool Congress", partyFlag: "🌿"  }
           ]
         },
         faq: { 
@@ -280,7 +280,6 @@ export const countryData: Record<string, CountryData> = {
         },
         reports: [
           { tag: "Live", title: "West Bengal Trends", content: "TMC maintains a strong lead in the urban centers of Kolkata, while BJP shows gains in the northern districts. Turnout has reached a record 78%.", meta: "Updated 2m ago" },
-          { tag: "Alert", title: "Maharashtra Government", content: "Devendra Fadnavis has been sworn in as the Chief Minister of Maharashtra following the recent assembly consensus.", meta: "Updated 10m ago" },
           { tag: "Analysis", title: "Youth Voter Turnout", content: "Over 15 million first-time voters have registered for the 2026 cycle.", meta: "Updated 1h ago" }
         ],
         voterJourney: [
@@ -317,14 +316,14 @@ export const countryData: Record<string, CountryData> = {
           },
           pm: { 
             name: "नरेन्द्र मोदी", role: "प्रधानमंत्री", dept: "सरकार के प्रमुख", 
-            image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/The_official_portrait_of_Shri_Narendra_Modi%2C_the_Prime_Minister_of_the_Republic_of_India.jpg/330px-The_official_portrait_of_Shri_Narendra_Modi%2C_the_Prime_Minister_of_the_Republic_of_India.jpg", 
+            image: "/narendra_modi.webp", 
             party: "भारतीय जनता पार्टी", partyFlag: "🟠" 
           },
           ministers: [
-            { name: "अमित शाह", role: "गृह मंत्री", dept: "गृह मंत्रालय", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Shri_Amit_Shah_in_Raigad.jpg/330px-Shri_Amit_Shah_in_Raigad.jpg", party: "भारतीय जनता पार्टी", partyFlag: "🟠" },
-            { name: "राजनाथ सिंह", role: "रक्षा मंत्री", dept: "रक्षा मंत्रालय", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/2025_Rajnath_Singh_%28cropped%29.jpg/330px-2025_Rajnath_Singh_%28cropped%29.jpg", party: "भारतीय जनता पार्टी", partyFlag: "🟠" },
-            { name: "निर्मला सीतारमण", role: "वित्त मंत्री", dept: "वित्त मंत्रालय", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Am_11._April_2025_empfing_Au%C3%9Fenministerin_Beate_Meinl-Reisinger_die_indische_Finanzministerin_Nirmala_Sitharaman_in_Wien_%2854445397025%29_%28cropped%29.jpg/330px-Am_11._April_2025_empfing_Au%C3%9Fenministerin_Beate_Meinl-Reisinger_die_indische_Finanzministerin_Nirmala_Sitharaman_in_Wien_%2854445397025%29_%28cropped%29.jpg", party: "भारतीय जनता पार्टी", partyFlag: "🟠" },
-            { name: "एस. जयशंकर", role: "विदेश मंत्री", dept: "विदेश मंत्रालय", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/The_official_portrait_of_External_Minister_Subrahmanyam_Jaishankar.jpg/330px-The_official_portrait_of_External_Minister_Subrahmanyam_Jaishankar.jpg", party: "भारतीय जनता पार्टी", partyFlag: "🟠" }
+            { name: "अमित शाह", role: "गृह मंत्री", dept: "गृह मंत्रालय", image: "/amit_shah.webp", party: "भारतीय जनता पार्टी", partyFlag: "🟠" },
+            { name: "राजनाथ सिंह", role: "रक्षा मंत्री", dept: "रक्षा मंत्रालय", image: "/rajnath_singh.webp", party: "भारतीय जनता पार्टी", partyFlag: "🟠" },
+            { name: "निर्मला सीतारमण", role: "वित्त मंत्री", dept: "वित्त मंत्रालय", image: "/nirmala_sitharaman.webp", party: "भारतीय जनता पार्टी", partyFlag: "🟠" },
+            { name: "एस. जयशंकर", role: "विदेश मंत्री", dept: "विदेश मंत्रालय", image: "/jaishankar.webp", party: "भारतीय जनता पार्टी", partyFlag: "🟠" }
           ],
           stateLeadersTitle: "राज्यों के मुख्यमंत्री",
           stateLeaders: [
@@ -353,12 +352,12 @@ export const countryData: Record<string, CountryData> = {
             { name: "भगवंत मान", region: "पंजाब", image: "https://upload.wikimedia.org/wikipedia/commons/f/f8/Bhagwant_Mann.png", party: "आम आदमी पार्टी", partyFlag: "🧹" },
             { name: "भजन लाल शर्मा", region: "राजस्थान", image: "https://upload.wikimedia.org/wikipedia/commons/9/9c/Bhajan_Lal_Sharma_and_deputies_meets_VP_of_India.jpg", party: "भारतीय जनता पार्टी", partyFlag: "🟠", deputies: [{"name":"दीया कुमारी","image":"https://upload.wikimedia.org/wikipedia/commons/1/1d/The_Deputy_Chief_Minister_of_Rajasthan%2C_Shrimathi_Diya_Kumari_%26_her_colleague_meet_VP_of_India_with_their_head.jpg"},{"name":"प्रेम चंद बैरवा","image":"https://upload.wikimedia.org/wikipedia/commons/d/dc/Prem_Chand_Bairwa_%28cropped%29.jpg"}] },
             { name: "प्रेम सिंह तमांग", region: "सिक्किम", image: "https://upload.wikimedia.org/wikipedia/commons/7/72/Prem_Singh_Tamang%2C_Chief_Minister_of_Sikkim.jpg", party: "सिक्किम क्रांतिकारी मोर्चा", partyFlag: "☀️" },
-            { name: "एम. के. स्टालिन", region: "तमिलनाडु", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/The_Chief_Minister_of_Tamil_Nadu%2C_Thiru_MK_Stalin.jpg/330px-The_Chief_Minister_of_Tamil_Nadu%2C_Thiru_MK_Stalin.jpg", party: "द्रविड़ मुनेत्र कड़गम", partyFlag: "☀️", deputies: [{"name":"उधयनिधि स्टालिन","image":"https://upload.wikimedia.org/wikipedia/commons/0/07/Udhaya.jpg"}] },
+            { name: "एम. के. स्टालिन", region: "तमिलनाडु", image: "/mk_stalin.webp", party: "द्रविड़ मुनेत्र कड़गम", partyFlag: "☀️", deputies: [{"name":"उधयनिधि स्टालिन","image":"https://upload.wikimedia.org/wikipedia/commons/0/07/Udhaya.jpg"}] },
             { name: "ए. रेवंत रेड्डी", region: "तेलंगाना", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Portrait_of_Telangana_CM_Revanth_Reddy.png/330px-Portrait_of_Telangana_CM_Revanth_Reddy.png", party: "भारतीय राष्ट्रीय कांग्रेस", partyFlag: "✋", deputies: [{"name":"मल्लू भट्टी विक्रमार्क","image":"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Portrait_of_Telangana_Deputy_CM_Bhatti_Vikramarka_Mallu%2815_June_2025%29.jpg/330px-Portrait_of_Telangana_Deputy_CM_Bhatti_Vikramarka_Mallu%2815_June_2025%29.jpg"}] },
             { name: "माणिक साहा", region: "त्रिपुरा", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Manik_Saha_Invitation_for_HWC_2023.jpg/330px-Manik_Saha_Invitation_for_HWC_2023.jpg", party: "भारतीय जनता पार्टी", partyFlag: "🟠" },
-            { name: "योगी आदित्यनाथ", region: "उत्तर प्रदेश", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Yogiji_in_2023.jpg/330px-Yogiji_in_2023.jpg", party: "भारतीय जनता पार्टी", partyFlag: "🟠", deputies: [{"name":"केशव प्रसाद मौर्य","image":"https://upload.wikimedia.org/wikipedia/commons/8/80/Shri_Keshav_Prasad_Maurya%2C_MP%2C_Phoolpur_%28U.P%29_and_Shri_Satyapal_Singh_Saini%2C_MP%2C_Sambhal_%28U.P%29_meeting_the_Minister_of_State_for_Culture_%28Independent_Charge%29%2C_Tourism_%28Independent_Charge%29_and_Civil_Aviation_%28cropped%29.jpg"},{"name":"ब्रजेश पाठक","image":"https://upload.wikimedia.org/wikipedia/commons/f/f5/Brajesh_Pathak.jpg"}] },
+            { name: "योगी आदित्यनाथ", region: "उत्तर प्रदेश", image: "/yogi_adityanath.webp", party: "भारतीय जनता पार्टी", partyFlag: "🟠", deputies: [{"name":"केशव प्रसाद मौर्य","image":"https://upload.wikimedia.org/wikipedia/commons/8/80/Shri_Keshav_Prasad_Maurya%2C_MP%2C_Phoolpur_%28U.P%29_and_Shri_Satyapal_Singh_Saini%2C_MP%2C_Sambhal_%28U.P%29_meeting_the_Minister_of_State_for_Culture_%28Independent_Charge%29%2C_Tourism_%28Independent_Charge%29_and_Civil_Aviation_%28cropped%29.jpg"},{"name":"ब्रजेश पाठक","image":"https://upload.wikimedia.org/wikipedia/commons/f/f5/Brajesh_Pathak.jpg"}] },
             { name: "पुष्कर सिंह धामी", region: "उत्तराखण्ड", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Pushkar_Singh_Dhami%2C_Chief_Minister_of_Uttarakhand.jpg/330px-Pushkar_Singh_Dhami%2C_Chief_Minister_of_Uttarakhand.jpg", party: "भारतीय जनता पार्टी", partyFlag: "🟠" },
-            { name: "ममता बनर्जी", region: "पश्चिम बंगाल", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Official_portrait_of_Mamata_Banerjee.jpg/330px-Official_portrait_of_Mamata_Banerjee.jpg", party: "अखिल भारतीय तृणमूल कांग्रेस", partyFlag: "🌿" }
+            { name: "ममता बनर्जी", region: "पश्चिम बंगाल", image: "/mamata_banerjee.webp", party: "अखिल भारतीय तृणमूल कांग्रेस", partyFlag: "🌿" }
           ]
         },
         faq: { 
@@ -505,7 +504,6 @@ export const countryData: Record<string, CountryData> = {
         },
         reports: [
           { tag: "लाइव", title: "पश्चिम बंगाल रुझान", content: "टीएमसी कोलकाता के शहरी केंद्रों में मजबूत बढ़त बनाए हुए है, जबकि भाजपा उत्तरी जिलों में बढ़त दिखा रही है।", meta: "2 मिनट पहले अपडेट किया गया" },
-          { tag: "अलर्ट", title: "महाराष्ट्र सरकार", content: "देवेंद्र फडणवीस ने महाराष्ट्र के मुख्यमंत्री के रूप में शपथ ली है।", meta: "10 मिनट पहले अपडेट किया गया" },
           { tag: "विश्लेषण", title: "युवा मतदाता मतदान", content: "2026 चक्र के लिए 1.5 करोड़ से अधिक पहली बार मतदाताओं ने पंजीकरण कराया है।", meta: "1 घंटे पहले अपडेट किया गया" }
         ],
         voterJourney: [

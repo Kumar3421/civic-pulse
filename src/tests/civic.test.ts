@@ -31,6 +31,6 @@ describe('CivicBot Simulation Logic', () => {
     const leaders = countryData.india.languages.en.leadership.stateLeaders
     const match = leaders.find(l => query.includes(l.region.toLowerCase()))
     expect(match).toBeDefined()
-    expect(match?.name).toBe('Devendra Fadnavis')
+    expect(match?.name).toBe('Eknath Shinde')
   })
 })
