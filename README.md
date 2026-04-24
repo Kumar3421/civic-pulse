@@ -94,7 +94,8 @@ npm run dev
 
 ### Cloud Run Deployment
 ```bash
-gcloud run deploy civic-pulse --source . --project my-second-project-494313 --region us-central1
+# Deploy to the authenticated project shown in your Cloud Shell prompt
+gcloud run deploy civic-pulse --source . --project my-second-project-494313 --region us-central1 --allow-unauthenticated
 ```
 
 ---
