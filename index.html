@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Civic Pulse | Interactive Election Guide</title>
+    <meta name="description" content="An interactive, premium assistant helping users understand the election process, timelines, and steps." />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/src/style.css">
+    
+    <!-- OpenGraph / Social Media -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Civic Pulse | 2026 Election Governance" />
+    <meta property="og:description" content="A premium, AI-powered interactive guide to the Indian democratic process. Built for Promptwars 2026." />
+    <meta property="og:image" content="/india_map_logo.webp" />
+    <meta property="og:url" content="https://civic-pulse-930907700771.us-central1.run.app" />
+
+    <!-- PWA Support -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#050510">
+  </head>
+  <body>
+    <div class="liquid-bg">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+    </div>
+    <div id="app">
+      <nav class="glass-nav">
+        <div class="nav-content">
+          <div class="logo">
+            <img src="/india_map_logo.webp" alt="India Map Logo" class="nav-logo-img">
+            <h1>Civic Pulse</h1>
+          </div>
+          <div class="nav-actions">
+            <select id="lang-selector" class="glass-select" aria-label="Select Language">
+              <!-- Dynamically filled -->
+            </select>
+            <ul class="nav-links" role="menubar">
+              <li role="none"><a href="#live-dashboard" id="nav-live" role="menuitem">Live Tracker</a></li>
+              <li role="none"><a href="#reports" id="nav-reports" role="menuitem">Reports</a></li>
+              <li role="none"><a href="#timeline" id="nav-timeline" role="menuitem">Timeline</a></li>
+              <li role="none"><a href="#guide" id="nav-guide" role="menuitem">Guide</a></li>
+            </ul>
+            <button id="settings-toggle" class="icon-btn" title="Settings" aria-label="Open Settings Panel">⚙️</button>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Settings Panel -->
+      <div id="settings-panel" class="settings-panel hidden">
+        <div class="settings-header">
+          <h3 id="settings-title">Personalize</h3>
+          <button class="close-settings">&times;</button>
+        </div>
+        <div class="settings-body">
+          <div class="setting-item">
+            <span id="label-dark">Dark Mode</span>
+            <label class="switch">
+              <input type="checkbox" id="theme-toggle" checked>
+              <span class="slider"></span>
+            </label>
+          </div>
+          <div class="setting-item">
+            <span id="label-glass">Transparency</span>
+            <label class="switch">
+              <input type="checkbox" id="glass-toggle" checked>
+              <span class="slider"></span>
+            </label>
+          </div>
+          <div class="setting-item">
+            <span id="label-anim">Animations</span>
+            <label class="switch">
+              <input type="checkbox" id="anim-toggle" checked>
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <main>
+        <section id="hero" class="hero-section">
+          <div class="hero-content">
+            <div class="badge">Election 2026 Education</div>
+            <h1>Master the <span>Democratic Process</span></h1>
+            <p id="hero-p">Navigate the complexities of the election cycle with our interactive assistant. From registration to inauguration, we've got you covered.</p>
+            <div class="hero-btns">
+              <button class="btn-primary" onclick="scrollToSection('#timeline')" aria-label="Explore Election Timeline">Explore Timeline</button>
+              <button class="btn-secondary" onclick="toggleCivicBot()" aria-label="Ask CivicBot assistant">Ask CivicBot</button>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <div class="glass-card-3d">
+              <!-- Visual elements will be handled in CSS/JS -->
+            </div>
+          </div>
+        </section>
+
+        <section id="live-dashboard" class="live-dashboard hidden">
+          <div class="live-header">
+            <div class="live-pulse"></div>
+            <h2 id="live-title">Live 2026 Election Tracker</h2>
+          </div>
+          <div id="live-stats-container" class="live-stats-container">
+            <!-- Dynamic Live Stats -->
+          </div>
+        </section>
+
+        <section id="reports" class="reports-section">
+          <h2 class="section-title" id="reports-title">2026 Election Reports</h2>
+          <div class="reports-grid">
+            <!-- Dynamic Content -->
+          </div>
+        </section>
+
+        <section id="leadership" class="leadership-section">
+          <h2 class="section-title" id="leadership-title">Governance & Leadership</h2>
+          <div id="leadership-container" class="leadership-container">
+            <!-- Dynamic Leadership Cards -->
+          </div>
+        </section>
+
+        <section id="timeline" class="timeline-section">
+          <h2 class="section-title" id="timeline-title">The Election Cycle</h2>
+          <div id="timeline-container">
+            <!-- Dynamic Content -->
+          </div>
+        </section>
+
+        <section id="voter-journey" class="journey-section">
+          <h2 class="section-title" id="journey-title">Your Voter Journey</h2>
+          <div id="voter-journey-container" class="journey-grid">
+            <!-- Dynamic Content -->
+          </div>
+        </section>
+
+        <section id="poll-checklist" class="journey-section">
+          <h2 class="section-title" id="checklist-title">Poll Day Checklist</h2>
+          <div id="checklist-container" class="checklist-grid">
+            <!-- Dynamic Content -->
+          </div>
+        </section>
+
+        <section id="guide" class="guide-section">
+          <h2 class="section-title" id="guide-title">Step-by-Step Breakdown</h2>
+          <div id="guide-grid">
+            <!-- Dynamic Content -->
+          </div>
+        </section>
+        <section id="resources" class="resources-section">
+          <h2 class="section-title" id="resources-title">Helpful Resources</h2>
+          <div class="resources-container">
+            <div class="resource-card glass-card">
+              <h3 id="res-poll-title">Find Your Polling Place</h3>
+              <p id="res-poll-p">Use official maps to find the nearest polling station in your precinct.</p>
+              <a href="https://www.google.com/maps/search/polling+stations+near+me" target="_blank" class="btn-resource" id="res-poll-btn">Open Map</a>
+            </div>
+            <div class="resource-card glass-card">
+              <h3 id="res-reg-title">Official Registration</h3>
+              <p id="res-reg-p">The official portal for voter registration and information.</p>
+              <a href="https://voters.eci.gov.in" target="_blank" class="btn-resource btn-resource-vote" id="res-reg-btn">Visit Portal</a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- CivicBot Floating Assistant -->
+      <div id="civic-bot" class="civic-bot-container hidden">
+        <div class="bot-header">
+          <div class="bot-info">
+            <div class="bot-avatar">CP</div>
+            <h3>CivicBot</h3>
+          </div>
+          <button class="close-bot" onclick="toggleCivicBot()">&times;</button>
+        </div>
+        <div id="bot-messages" class="bot-messages">
+          <div class="message bot">
+            Namaste! I'm CivicBot, your dedicated guide to the Indian 2026 Elections. I can help you with registration, polling steps, and understanding your voting rights. 
+
+What would you like to explore today?
+          </div>
+        </div>
+        <div id="bot-suggestions" class="bot-suggestions">
+          <!-- Quick Chips -->
+        </div>
+        <div class="bot-input">
+          <input type="text" id="bot-input-field" placeholder="Ask about registration, voting..." aria-label="Message CivicBot" />
+          <button id="send-btn" aria-label="Send Message">Send</button>
+        </div>
+      </div>
+
+      <div class="civic-bot-toggle" onclick="toggleCivicBot()">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="bot-icon-svg">
+          <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 13.4876 3.36093 14.891 4 16.1272L3 21L7.8728 20C9.10898 20.6391 10.5124 21 12 21Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M8 12H8.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M12 12H12.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M16 12H16.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+      <footer class="glass-footer">
+        <p id="footer-text">&copy; 2026 Civic Pulse. Built for Promptwars Hackathon.</p>
+        <div class="google-badge" id="google-badge">Powered by Google Cloud Run</div>
+      </footer>
+    </div>
+
+    <!-- Party Knowledge Modal -->
+    <div id="party-modal" class="glass-modal hidden">
+      <div class="modal-content">
+        <button id="close-modal" class="close-btn">&times;</button>
+        <h2 id="modal-party-name"></h2>
+        <div class="modal-body">
+          <p id="modal-party-desc"></p>
+          <div class="modal-meta">
+            <span id="modal-party-ideology"></span>
+            <span id="modal-party-founded"></span>
+          </div>
+          <div id="modal-deputies" class="modal-deputies hidden">
+            <h3>Deputy Chief Ministers</h3>
+            <div class="deputies-grid" id="deputies-grid"></div>
+          </div>
+        </div>
+      </div>
+      <!-- VVPAT Simulator Modal -->
+      <div id="vvpat-modal" class="vvpat-modal hidden">
+        <div class="vvpat-content glass-card">
+          <div class="vvpat-header">
+            <h3>VVPAT Verification</h3>
+            <div id="vvpat-timer" class="vvpat-timer">7s</div>
+          </div>
+          <div class="vvpat-slip">
+            <div class="slip-candidate">
+              <span id="slip-name">John Doe</span>
+              <span id="slip-party">Independent</span>
+            </div>
+            <div class="slip-symbol">🗳️</div>
+          </div>
+          <p id="vvpat-status">Printing slip...</p>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
