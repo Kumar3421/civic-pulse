@@ -72,8 +72,23 @@ npm run dev
 ```
 
 ### Final Deployment (Cloud Run)
+
+For a professional, automated deployment, use the provided Cloud Build configuration or the convenience script:
+
+**Option 1: One-Click Script (Recommended)**
 ```bash
-gcloud run deploy civic-pulse --source . --project my-second-project-494313 --region us-central1 --allow-unauthenticated
+chmod +x deploy.sh
+./deploy.sh
+```
+
+**Option 2: Direct Cloud Build Trigger**
+```bash
+gcloud builds submit --config cloudbuild.yaml .
+```
+
+**Option 3: Manual Deployment**
+```bash
+gcloud run deploy civic-pulse --source . --project $PROJECT_ID --region us-central1 --allow-unauthenticated
 ```
 
 ---

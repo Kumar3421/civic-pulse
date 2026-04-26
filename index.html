@@ -211,9 +211,9 @@ What would you like to explore today?
     </div>
 
     <!-- Party Knowledge Modal -->
-    <div id="party-modal" class="glass-modal hidden">
+    <div id="party-modal" class="glass-modal hidden" aria-modal="true" role="dialog">
       <div class="modal-content">
-        <button id="close-modal" class="close-btn">&times;</button>
+        <button id="close-modal" class="close-btn" aria-label="Close Modal">&times;</button>
         <h2 id="modal-party-name"></h2>
         <div class="modal-body">
           <p id="modal-party-desc"></p>
@@ -228,7 +228,7 @@ What would you like to explore today?
         </div>
       </div>
       <!-- VVPAT Simulator Modal -->
-      <div id="vvpat-modal" class="vvpat-modal hidden">
+      <div id="vvpat-modal" class="vvpat-modal hidden" aria-modal="true" role="dialog">
         <div class="vvpat-content glass-card">
           <div class="vvpat-header">
             <h3>VVPAT Verification</h3>
@@ -245,9 +245,6 @@ What would you like to explore today?
         </div>
       </div>
     </div>
-    <footer class="glass-footer" style="padding: 2rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 4rem;">
-      <p style="color: rgba(255,255,255,0.5);">© 2026 Civic Pulse | Optimized for Hackathon | <span id="sync-time">Freshly Sync'd</span></p>
-    </footer>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

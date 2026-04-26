@@ -477,8 +477,35 @@ function initAnimations() {
 let botVisible = false
 window.toggleCivicBot = () => {
   botVisible = !botVisible
+  const botEl = document.getElementById('civic-bot')
+  const toggleBtn = document.querySelector('.civic-bot-toggle')
+  if (!botEl) return
+  
   if (botVisible) {
-    gsap.from('.civic-bot-container', { y: 100, opacity: 0, duration: 0.6, ease: 'back.out(1.7)' })
+    botEl.classList.remove('hidden')
+    gsap.fromTo(botEl, 
+      { y: 50, opacity: 0, scale: 0.9 },
+      { y: 0, opacity: 1, scale: 1, duration: 0.5, ease: 'back.out(1.7)' }
+    )
+    if (toggleBtn) gsap.to(toggleBtn, { rotation: 180, duration: 0.4 })
+    
+    // Auto-scroll and focus
+    const msgContainer = document.getElementById('bot-messages')
+    if (msgContainer) msgContainer.scrollTop = msgContainer.scrollHeight
+    document.getElementById('bot-input-field')?.focus()
+  } else {
+    if (toggleBtn) gsap.to(toggleBtn, { rotation: 0, duration: 0.4 })
+    gsap.to(botEl, { 
+      y: 50, 
+      opacity: 0, 
+      scale: 0.9,
+      duration: 0.4, 
+      ease: 'power2.in',
+      onComplete: () => {
+        botEl.classList.add('hidden')
+        gsap.set(botEl, { clearProps: 'all' })
+      }
+    })
   }
 }
 
@@ -539,7 +566,7 @@ function setupBot() {
       if (stepIdx < reasoningSteps.length) {
         updateThinking(reasoningSteps[stepIdx])
         stepIdx++
-        setTimeout(runStep, 800 + Math.random() * 400)
+        setTimeout(runStep, 600 + Math.random() * 300)
       } else {
         finalizeResponse()
       }
@@ -547,43 +574,88 @@ function setupBot() {
 
     const finalizeResponse = () => {
       removeThinking()
+      
+      // Intelligent Cleaning: Remove common question prefixes
+      const prefixes = currentLang === 'hi' 
+        ? ['कौन है', 'क्या है', 'के बारे में बताओ', 'बताओ']
+        : ['who is', 'what is', 'tell me about', 'search for', 'where is']
+      
+      let query = text
+      prefixes.forEach(p => { query = query.replace(p, '').trim() })
+
       let finalResponse = currentLang === 'hi' 
-        ? `मुझे इसके बारे में पक्का पता नहीं है। ये पूछने की कोशिश करें: लोक सभा, एनएसए, या किसी राज्य का नाम।`
-        : `I'm not quite sure about that. Try asking about: Lok Sabha, NSA, or any State name.`
+        ? `क्षमा करें, मुझे "${query}" के बारे में पक्का पता नहीं है। आप मुख्यमंत्रियों, मंत्रियों या मतदान प्रक्रिया के बारे में पूछ सकते हैं।`
+        : `I'm not quite sure about "${query}". Try asking about Chief Ministers, Union Ministers, or the voting process (e.g., "what is VVPAT?").`
 
-      // 1. Check Political Knowledge (National)
-      const pk = (data as any).politicalKnowledge || {}
-      for (const [key, val] of Object.entries(pk)) {
-        if (text.includes(key.toLowerCase())) {
-          finalResponse = val as string
-          break
-        }
-      }
-
-      // 2. Check FAQ
-      for (const [key, val] of Object.entries(data.faq)) {
-        if (text.includes(key)) {
-          finalResponse = val;
-          break;
-        }
-      }
-
-      // 3. Check State Leadership (Dynamic)
-      data.leadership.stateLeaders.forEach((leader: any) => {
-        if (text.includes(leader.region.toLowerCase())) {
+      // 1. Priority Match: State Leadership (Dynamic)
+      for (const leader of data.leadership.stateLeaders) {
+        if (text.includes(leader.region.toLowerCase()) || text.includes(leader.name.toLowerCase())) {
           const deps = leader.deputies ? leader.deputies.map((d: any) => d.name).join(', ') : (currentLang === 'hi' ? 'कोई नहीं' : 'None')
           finalResponse = currentLang === 'hi'
-            ? `${leader.region} के मुख्यमंत्री ${leader.name} हैं। उप-मुख्यमंत्री: ${deps}।`
-            : `The Chief Minister of ${leader.region} is ${leader.name}. Deputy CMs: ${deps}.`
+            ? `${leader.region} के मुख्यमंत्री ${leader.name} हैं। उनकी पार्टी ${leader.partyFlag} ${leader.party} है। उप-मुख्यमंत्री: ${deps}।`
+            : `The Chief Minister of ${leader.region} is ${leader.name} (${leader.partyFlag} ${leader.party}). Deputy CMs: ${deps}.`
+          addMessage(finalResponse, 'bot')
+          return
         }
-      })
+      }
+
+      // 2. Priority Match: Union Cabinet
+      const cabinet = [...(data.leadership.ministers || []), data.leadership.pm, data.leadership.president].filter(Boolean)
+      for (const minister of cabinet) {
+        if (text.includes(minister!.name.toLowerCase()) || text.includes(minister!.role.toLowerCase())) {
+          finalResponse = currentLang === 'hi'
+            ? `${minister!.name} भारत के ${minister!.role} हैं। वे ${minister!.dept} का नेतृत्व करते हैं।`
+            : `${minister!.name} is the ${minister!.role} of India, leading the ${minister!.dept}.`
+          addMessage(finalResponse, 'bot')
+          return
+        }
+      }
+
+      // 3. Concept Match: Political Knowledge
+      const pk = (data as any).politicalKnowledge || {}
+      for (const [key, val] of Object.entries(pk)) {
+        if (text.includes(key.toLowerCase()) || query.includes(key.toLowerCase())) {
+          finalResponse = val as string
+          addMessage(finalResponse, 'bot')
+          return
+        }
+      }
+
+      // 4. FAQ Match: Election Guidance
+      for (const [key, val] of Object.entries(data.faq)) {
+        if (text.includes(key.toLowerCase()) || query.includes(key.toLowerCase())) {
+          finalResponse = val;
+          addMessage(finalResponse, 'bot')
+          return
+        }
+      }
+
+      // 5. Action Match: Map / Polling Booth
+      if (text.includes('map') || text.includes('booth') || text.includes('मानचित्र') || text.includes('बूथ')) {
+        finalResponse = currentLang === 'hi'
+          ? "निश्चित रूप से! मैं आपके लिए मतदान केंद्र का मानचित्र खोल रहा हूँ और आपको संसाधन अनुभाग पर ले जा रहा हूँ।"
+          : "Certainly! I'm opening the polling station map for you and scrolling to the resources section."
+        addMessage(finalResponse, 'bot')
+        
+        // Trigger action
+        setTimeout(() => {
+          const mapLink = document.getElementById('res-poll-btn') as HTMLAnchorElement
+          if (mapLink) mapLink.click()
+          window.location.hash = 'resources'
+        }, 1500)
+        return
+      }
+
+      // 6. Greeting/Identity check
+      if (text.includes('hello') || text.includes('hi') || text.includes('namaste') || text.includes('नमस्ते') || text.includes('help')) {
+        finalResponse = currentLang === 'hi' 
+          ? "नमस्ते! मैं सिविकबॉट हूँ। मैं आपकी भारतीय चुनाव 2026 की जानकारी में मदद कर सकता हूँ। आप क्या जानना चाहते हैं? (जैसे: 'पंजीकरण कैसे करें?' या 'योगी आदित्यनाथ कौन हैं?')"
+          : "Hello! I'm CivicBot. I'm here to help you navigate the 2026 Indian Elections. What would you like to know today? (e.g., 'How to register?' or 'Who is Narendra Modi?')"
+        addMessage(finalResponse, 'bot')
+        return
+      }
 
       addMessage(finalResponse, 'bot')
-      
-      // Proactive suggestions based on response
-      if (finalResponse.includes('register') || finalResponse.includes('पंजीकरण')) {
-        setTimeout(() => addMessage(currentLang === 'hi' ? 'क्या आप पंजीकरण की अंतिम तिथि जानना चाहते हैं?' : 'Would you like to know the registration deadlines?', 'bot'), 1000)
-      }
     }
 
     runStep()

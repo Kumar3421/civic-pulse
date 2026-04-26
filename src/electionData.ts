@@ -163,7 +163,13 @@ export const countryData: Record<string, CountryData> = {
           "finance minister": "The Union Minister of Finance is Smt. Nirmala Sitharaman.",
           "defense minister": "The Union Minister of Defence is Shri Rajnath Singh.",
           "nsa": "The National Security Advisor (NSA) of India is Shri Ajit Doval.",
-          "isro chairman": "The Chairman of ISRO is Shri S. Somanath."
+          "isro chairman": "The Chairman of ISRO is Shri S. Somanath.",
+          "eci chief": "The Chief Election Commissioner of India is Rajiv Kumar. He oversees the entire election process.",
+          "speaker": "The Speaker of the Lok Sabha is Om Birla. He presides over the lower house sessions.",
+          "mcc": "Model Code of Conduct: Guidelines for parties and candidates regarding speeches, polling day, and election manifestos.",
+          "vvpat": "Voter Verifiable Paper Audit Trail: A slip printed by the EVM that allows you to verify your vote for 7 seconds.",
+          "nota": "None of the Above: A ballot option that allows voters to exercise their right not to vote for any candidate.",
+          "msc": "The Minimum Support Price (MSP) is often a key election issue concerning farmers' livelihoods."
         },
         partyKnowledge: {
           "Bharatiya Janata Party": {
@@ -387,7 +393,12 @@ export const countryData: Record<string, CountryData> = {
           "वित्त मंत्री": "केंद्रीय वित्त मंत्री श्रीमती निर्मला सीतारमण हैं।",
           "रक्षा मंत्री": "केंद्रीय रक्षा मंत्री श्री राजनाथ सिंह हैं।",
           "एनएसए": "भारत के राष्ट्रीय सुरक्षा सलाहकार (NSA) श्री अजीत डोभाल हैं।",
-          "इसरो अध्यक्ष": "इसरो (ISRO) के अध्यक्ष श्री एस. सोमनाथ हैं।"
+          "इसरो अध्यक्ष": "इसरो (ISRO) के अध्यक्ष श्री एस. सोमनाथ हैं।",
+          "मुख्य चुनाव आयुक्त": "भारत के मुख्य चुनाव आयुक्त राजीव कुमार हैं।",
+          "लोकसभा अध्यक्ष": "लोकसभा के अध्यक्ष ओम बिड़ला हैं।",
+          "आचार संहिता": "आदर्श आचार संहिता: चुनाव के दौरान पार्टियों और उम्मीदवारों के लिए नियम।",
+          "वीवीपीएटी": "वीवीपीएटी (VVPAT) एक मशीन है जो आपको अपना वोट 7 सेकंड के लिए देखने देती है।",
+          "नोटा": "इनमें से कोई नहीं (नोटा) मतदाताओं को सभी उम्मीदवारों को खारिज करने का अधिकार देता है।"
         },
         partyKnowledge: {
           "भारतीय जनता पार्टी": {
