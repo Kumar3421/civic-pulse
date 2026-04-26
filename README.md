@@ -1,11 +1,11 @@
-# 🌊 Civic Pulse: 2026 Election Governance Dashboard
+# 🌊 Civic Pulse: AI-Powered Election Intelligence
 
 [![Deployed to Cloud Run](https://img.shields.io/badge/Deployed%20to-Cloud%20Run-blue?logo=google-cloud&logoColor=white)](https://civic-pulse-930907700771.us-central1.run.app)
 [![Vite](https://img.shields.io/badge/Built%20with-Vite-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
 [![TypeScript](https://img.shields.io/badge/Language-TypeScript-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![PWA](https://img.shields.io/badge/Progressive%20Web%20App-Enabled-0ea5e9?logo=pwa&logoColor=white)](https://web.dev/progressive-web-apps/)
 
-**Civic Pulse** is a state-of-the-art, "featherweight" governance platform designed for the 2026 Indian Election cycle. It leverages a premium **Liquid Glass** UI and a high-intelligence AI assistant to provide citizens with seamless access to election timelines, leadership data, and registration resources.
+**Civic Pulse** is a high-intelligence election intelligence platform built for the 2026 Indian Elections. Merging a premium **Liquid Glass** aesthetic with **AI-driven voter guidance**, it provides a seamless, real-time gateway to governance data, leadership tracking, and interactive voter education. Built for speed, transparency, and impact.
 
 ---
 
